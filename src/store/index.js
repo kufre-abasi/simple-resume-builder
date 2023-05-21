@@ -1,10 +1,5 @@
 import { createStore } from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
-import visited from './modules/visited'
-import headlines from './modules/headlines'
-import sources from './modules/sources'
-import countries from './modules/countries'
-import categories from './modules/categories'
 
 export default createStore({
   plugins: [createPersistedState()], // This Vuex store uses the vuex-persistedstate plugin to persist the state in the browser's local storage.
