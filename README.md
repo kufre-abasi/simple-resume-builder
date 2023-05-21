@@ -1,7 +1,7 @@
 
 ## **SIMPLE RESUME BUIDLER**
 
-https://resume.vercel.app
+https://simpleresume.vercel.app
 
 
 
