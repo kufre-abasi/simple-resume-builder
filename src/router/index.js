@@ -19,10 +19,16 @@ const router = createRouter({
       path: '/',
       name: 'home',
     
-      component: () => import('@/App.vue'),
+      component: () => import('@/views/HomeView.vue'),
       props: true,
     },
-
+    {
+      path: '/edit/resume',
+      name: 'edit.resume',
+    
+      component: () => import('@/views/ResumeBuilder.vue'),
+      props: true,
+    },
 
     // 404 Error route
     {

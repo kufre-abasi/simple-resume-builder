@@ -27,9 +27,9 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'ALIVE',
-        short_name: 'NEWS',
-        description: 'News Reader',
+        name: 'Resume',
+        short_name: 'Resume',
+        description: 'Fast, Strong and Simple Resume Builder',
         theme_color: '#ffffff',
         icons: [
           {

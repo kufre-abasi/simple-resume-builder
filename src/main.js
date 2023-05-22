@@ -42,7 +42,12 @@ registerSW({
 })
 
 // Create the Vue application and configure plugins
-const app = createApp(App).use(FlagIcon).use(router).use(store).use(vuetify)
+const app = createApp(App)
+
+app.use(FlagIcon)
+app.use(router)
+app.use(store)
+app.use(vuetify)
 app.use(VueGtagPlugin, gtagOpts);
 // Load fonts
 loadFonts()

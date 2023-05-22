@@ -1,6 +1,7 @@
 <template>
   <v-app>
-  
+      <Navbar/>
+       <router-view ></router-view>
   </v-app>
 </template>
 
@@ -8,12 +9,13 @@
 import { mapGetters, mapActions } from 'vuex'
 
 import Error from './components/Error.vue'
+import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'App',
   
   components: {
-    
+    Navbar,
     Error,
     
   },
