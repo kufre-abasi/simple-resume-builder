@@ -4,8 +4,8 @@
     elevation="0"
   >
     <template v-slot:prepend>
-        <img src="icon.png" style="height: 100%;padding:0.5em" />
-        <img src="logo_text.png" style="height: 50%;padding:0.5em" />
+        <v-img src="icon.png" class="pa-5 mr-2"/>
+        <v-img src="logo_text.png" class="pa-10"/>
 
     
     </template>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+
     export default {
         
     }
