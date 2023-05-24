@@ -10,7 +10,7 @@
             padding-bottom: 100px;
             height: 100vh;
             overflow-y: auto;
-     
+
             left: 0;
             background-color: white;
           "
@@ -21,520 +21,509 @@
             <!-- <v-text-field label="Position"> -->
 
             <!-- </v-text-field> -->
-            <form>
-              <v-expansion-panels variant="accordion">
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-card-account-details" /><span
-                        class="ml-2"
-                        >PERSONAL INFORMATION</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <v-text-field
-                          rounded="0"
-                          name="job_title"
-                          label="Job Title"
-                          id="job_title"
-                          variant="underlined"
-                          v-model="resume.personalInfo.jobTitle"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="4" md="4">
-                        <v-text-field
-                          rounded="0"
-                          name="first_name"
-                          label="First Name"
-                          id="first_name"
-                          variant="underlined"
-                          v-model="resume.personalInfo.firstname"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="4" md="4">
-                        <v-text-field
-                          rounded="0"
-                          name="middle_name"
-                          label="Middle Name (Optional)"
-                          id="middle_name"
-                          variant="underlined"
-                          v-model="resume.personalInfo.middlename"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="4" md="4">
-                        <v-text-field
-                          rounded="0"
-                          name="last_name"
-                          label="Last Name"
-                          id="last_name"
-                          variant="underlined"
-                          v-model="resume.personalInfo.lastname"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="6">
-                        <v-text-field
-                          rounded="0"
-                          name="resume_email"
-                          label="Email"
-                          id="resume_email"
-                          variant="underlined"
-                          v-model="resume.personalInfo.email"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="6">
-                        <v-text-field
-                          rounded="0"
-                          name="resume_phone"
-                          label="Phone"
-                          id="resume_phone"
-                          variant="underlined"
-                          v-model="resume.personalInfo.phone"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="6">
-                        <v-text-field
-                          rounded="0"
-                          name="country"
-                          label="Country"
-                          id="country"
-                          variant="underlined"
-                          v-model="resume.personalInfo.country"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="6">
-                        <v-text-field
-                          rounded="0"
-                          name="city"
-                          label="City"
-                          id="city"
-                          variant="underlined"
-                          v-model="resume.personalInfo.city"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="6">
-                        <v-text-field
-                          rounded="0"
-                          name="address"
-                          label="Address"
-                          id="address"
-                          variant="underlined"
-                          v-model="resume.personalInfo.address"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="6">
-                        <v-text-field
-                          rounded="0"
-                          name="postalcode"
-                          label="Postal Code"
-                          id="postalcode"
-                          variant="underlined"
-                          v-model="resume.personalInfo.postalCode"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="6">
-                        <v-text-field
-                          rounded="0"
-                          name="nationality"
-                          label="Nationality"
-                          id="nationality"
-                          variant="underlined"
-                          v-model="resume.personalInfo.nationality"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="6">
-                        <v-text-field
-                          type="date"
-                          rounded="0"
-                          name="date_of_birth"
-                          label="Date of Birth (Optional)"
-                          id="date_of_birth"
-                          variant="underlined"
-                          v-model="resume.personalInfo.dateOfBirth"
-                        ></v-text-field>
-                      </v-col>
-                      <v-col cols="12">
-                        <v-text-field
-                          rounded="0"
-                          prepend-icon="mdi:mdi-linkedin"
-                          name="linkedIn"
-                          label="LinkedIn Profile"
-                          id="linkedIn"
-                          variant="underlined"
-                          v-model="resume.personalInfo.linkedin"
-                        ></v-text-field>
-                      </v-col>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
 
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-text-box" /><span class="ml-2"
-                        >SUMMARY</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <v-textarea
-                          variant="underlined"
-                          auto-grow
-                          label="Subject"
-                          rows="4"
-                          id="summary"
-                          row-height="30"
-                          shaped
-                          v-model="resume.summary"
-                          ref="textarea"
-                        ></v-textarea>
-                      </v-col>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-toolbox" /><span class="ml-2"
-                        >EXPERIENCES</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <v-expansion-panels
-                          variant="popout"
-                          v-model="expPanels"
-                        >
-                          <ExperienceCard
-                            v-for="experience in resume.experiences"
-                            :key="experience.id"
-                            :id="experience.id"
-                            :company-name="experience.companyName"
-                            :start-date="experience.startDate"
-                            :end-date="experience.endDate"
-                            :job-title="experience.jobTitle"
-                            :company-location="experience.companyLocation"
-                            :job-description="experience.jobDescription"
-                            :job-des-content="experience.jobDesContent"
-                            @on-remove="removeExperience"
-                            @on-update="updateExperience"
-                            v-bind="experience"
-                          />
-                        </v-expansion-panels>
-                      </v-col>
-                      <v-btn
-                        prepend-icon="mdi:mdi-plus-thick"
-                        size="small"
-                        variant="text"
+            <v-expansion-panels variant="accordion" v-model="defaultPanel">
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-card-account-details" /><span
+                      class="ml-2"
+                      >PERSONAL INFORMATION</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <v-text-field
                         rounded="0"
-                        width="100%"
-                        class="justify-center"
-                        @click="addExperience"
-                      >
-                        Add More
-                      </v-btn>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-school" /><span class="ml-2"
-                        >EDUCATION</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <v-expansion-panels variant="popout" v-model="edPanels">
-                          <EducationCard
-                            v-for="education in resume.educations"
-                            :key="education.id"
-                            :id="education.id"
-                            :school-name="education.schoolName"
-                            :degree="education.degree"
-                            :start-date="education.startDate"
-                            :end-date="education.endDate"
-                            :school-location="education.schoolLocation"
-                            :job-description="education.edDescription"
-                            :job-des-content="education.edDesContent"
-                            @on-remove="removeEducation"
-                            @on-update="updateEducation"
-                            v-bind="education"
-                          />
-                        </v-expansion-panels>
-                      </v-col>
-                      <v-btn
-                        prepend-icon="mdi:mdi-plus-thick"
-                        size="small"
-                        variant="text"
+                        name="job_title"
+                        label="Job Title"
+                        id="job_title"
+                        variant="underlined"
+                        v-model="resume.personalInfo.jobTitle"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="4" md="4">
+                      <v-text-field
                         rounded="0"
-                        width="100%"
-                        class="justify-center"
-                        @click="addEducation"
-                      >
-                        Add More
-                      </v-btn>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-arrow-up-bold-box" /><span
-                        class="ml-2"
-                        >SKILLS</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <div v-for="skill in resume.skills">
-                          <SingleInput
-                            :id="skill.id"
-                            :value="skill.name"
-                            label="Skill"
-                            @on-remove="removeSkills"
-                            @on-update="updateSkills"
-                          />
-                        </div>
-                      </v-col>
-                      <v-btn
-                        prepend-icon="mdi:mdi-plus-thick"
-                        size="small"
-                        variant="text"
+                        name="first_name"
+                        label="First Name"
+                        id="first_name"
+                        variant="underlined"
+                        v-model="resume.personalInfo.firstname"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="4" md="4">
+                      <v-text-field
                         rounded="0"
-                        width="100%"
-                        class="justify-center"
-                        @click="addSkills"
-                      >
-                        Add More
-                      </v-btn>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-certificate" /><span class="ml-2"
-                        >CERTIFICATIONS</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <v-expansion-panels
-                          variant="popout"
-                          v-model="certPanels"
-                        >
-                          <CertificateCard
-                            v-for="certificate in resume.certificates"
-                            :key="certificate.id"
-                            :id="certificate.id"
-                            :cert-name="certificate.certName"
-                            :link="certificate.link"
-                            :start-date="certificate.startDate"
-                            :end-date="certificate.endDate"
-                            :cert-description="certificate.edDescription"
-                            :cert-des-content="certificate.edDesContent"
-                            @on-remove="removeCertificates"
-                            @on-update="updateCertificates"
-                            v-bind="certificate"
-                          />
-                        </v-expansion-panels>
-                      </v-col>
-                      <v-btn
-                        prepend-icon="mdi:mdi-plus-thick"
-                        size="small"
-                        variant="text"
+                        name="middle_name"
+                        label="Middle Name (Optional)"
+                        id="middle_name"
+                        variant="underlined"
+                        v-model="resume.personalInfo.middlename"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="4" md="4">
+                      <v-text-field
                         rounded="0"
-                        width="100%"
-                        class="justify-center"
-                        @click="addCertificates"
-                      >
-                        Add More
-                      </v-btn>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-google-translate" /><span
-                        class="ml-2"
-                        >LANGUAGES</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <div v-for="language in resume.languages">
-                          <SingleInput
-                            :id="language.id"
-                            :value="language.name"
-                            label="Language"
-                            @on-remove="removeLanguages"
-                            @on-update="updateLanguages"
-                          />
-                        </div>
-                      </v-col>
-                      <v-btn
-                        prepend-icon="mdi:mdi-plus-thick"
-                        size="small"
-                        variant="text"
+                        name="last_name"
+                        label="Last Name"
+                        id="last_name"
+                        variant="underlined"
+                        v-model="resume.personalInfo.lastname"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
                         rounded="0"
-                        width="100%"
-                        class="justify-center"
-                        @click="addLanguages"
-                      >
-                        Add More
-                      </v-btn>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-account-multiple-check" /><span
-                        class="ml-2"
-                        >REFERENCES</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <!-- Company -->
-                        <v-expansion-panels
-                          variant="popout"
-                          v-model="refPanels"
-                        >
-                          <References
-                            v-for="reference in resume.references"
-                            :key="reference.id"
-                            :id="reference.id"
-                            :name="reference.name"
-                            :email="reference.email"
-                            :phone="reference.phone"
-                            @on-remove="removeReferences"
-                            @on-update="updateReferences"
-                            v-bind="reference"
-                          />
-                        </v-expansion-panels>
-                      </v-col>
-                      <v-btn
-                        prepend-icon="mdi:mdi-plus-thick"
-                        size="small"
-                        variant="text"
+                        name="resume_email"
+                        label="Email"
+                        id="resume_email"
+                        variant="underlined"
+                        v-model="resume.personalInfo.email"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
                         rounded="0"
-                        width="100%"
-                        class="justify-center"
-                        @click="addReferences"
-                      >
-                        Add More
-                      </v-btn>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-link-variant-plus" /><span
-                        class="ml-2"
-                        >SOCIAL LINKS</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <div v-for="sl in resume.socialLinks">
-                          <DoubleInput
-                            :id="sl.id"
-                            @on-remove="removeSoicalLinks"
-                            @on-update="updateSoicalLinks"
-                            label1="Title"
-                            label2="Link"
-                            :value1="sl.value1"
-                            :value2="sl.value2"
-                          />
-                        </div>
-                      </v-col>
-                      <v-btn
-                        prepend-icon="mdi:mdi-plus-thick"
-                        size="small"
-                        variant="text"
+                        name="resume_phone"
+                        label="Phone"
+                        id="resume_phone"
+                        variant="underlined"
+                        v-model="resume.personalInfo.phone"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
                         rounded="0"
-                        width="100%"
-                        class="justify-center"
-                        @click="addSoicalLinks"
-                      >
-                        Add More
-                      </v-btn>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <v-row align="center">
-                      <v-icon icon="mdi:mdi-box-shadow" /><span class="ml-2"
-                        >PORTFOLIOS</span
-                      >
-                    </v-row>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <v-row>
-                      <v-col cols="12">
-                        <div v-for="p in resume.portfolios">
-                          <DoubleInput
-                            :id="p.id"
-                            @on-remove="removePortfolios"
-                            @on-update="updatePortfolios"
-                            label1="Title"
-                            label2="Link"
-                            :value1="p.value1"
-                            :value2="p.value2"
-                          />
-                        </div>
-                      </v-col>
-                      <v-btn
-                        prepend-icon="mdi:mdi-plus-thick"
-                        size="small"
-                        variant="text"
+                        name="country"
+                        label="Country"
+                        id="country"
+                        variant="underlined"
+                        v-model="resume.personalInfo.country"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
                         rounded="0"
-                        width="100%"
-                        class="justify-center"
-                        @click="addPortfolios"
-                      >
-                        Add More
-                      </v-btn>
-                    </v-row>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
+                        name="city"
+                        label="City"
+                        id="city"
+                        variant="underlined"
+                        v-model="resume.personalInfo.city"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
+                        rounded="0"
+                        name="address"
+                        label="Address"
+                        id="address"
+                        variant="underlined"
+                        v-model="resume.personalInfo.address"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
+                        rounded="0"
+                        name="postalcode"
+                        label="Postal Code"
+                        id="postalcode"
+                        variant="underlined"
+                        v-model="resume.personalInfo.postalCode"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
+                        rounded="0"
+                        name="nationality"
+                        label="Nationality"
+                        id="nationality"
+                        variant="underlined"
+                        v-model="resume.personalInfo.nationality"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
+                        type="date"
+                        rounded="0"
+                        name="date_of_birth"
+                        label="Date of Birth (Optional)"
+                        id="date_of_birth"
+                        variant="underlined"
+                        v-model="resume.personalInfo.dateOfBirth"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12">
+                      <v-text-field
+                        rounded="0"
+                        prepend-icon="mdi:mdi-linkedin"
+                        name="linkedIn"
+                        label="LinkedIn Profile"
+                        id="linkedIn"
+                        variant="underlined"
+                        v-model="resume.personalInfo.linkedin"
+                      ></v-text-field>
+                    </v-col>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
 
-                <!-- <CustomSection v-for="section in resume.customSections" :section="section" />
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-text-box" /><span class="ml-2"
+                      >SUMMARY</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <v-textarea
+                        variant="underlined"
+                        auto-grow
+                        label="Subject"
+                        rows="4"
+                        id="summary"
+                        row-height="30"
+                        shaped
+                        v-model="resume.summary"
+                        ref="textarea"
+                      ></v-textarea>
+                    </v-col>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-toolbox" /><span class="ml-2"
+                      >EXPERIENCES</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <v-expansion-panels variant="popout" v-model="expPanels">
+                        <ExperienceCard
+                          v-for="experience in resume.experiences"
+                          :key="experience.id"
+                          :id="experience.id"
+                          :company-name="experience.companyName"
+                          :start-date="experience.startDate"
+                          :end-date="experience.endDate"
+                          :job-title="experience.jobTitle"
+                          :company-location="experience.companyLocation"
+                          :job-description="experience.jobDescription"
+                          :job-des-content="experience.jobDesContent"
+                          @on-remove="removeExperience"
+                          @on-update="updateExperience"
+                          v-bind="experience"
+                        />
+                      </v-expansion-panels>
+                    </v-col>
+                    <v-btn
+                      prepend-icon="mdi:mdi-plus-thick"
+                      size="small"
+                      variant="text"
+                      rounded="0"
+                      width="100%"
+                      class="justify-center"
+                      @click="addExperience"
+                    >
+                      Add More
+                    </v-btn>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-school" /><span class="ml-2"
+                      >EDUCATION</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <v-expansion-panels variant="popout" v-model="edPanels">
+                        <EducationCard
+                          v-for="education in resume.educations"
+                          :key="education.id"
+                          :id="education.id"
+                          :school-name="education.schoolName"
+                          :degree="education.degree"
+                          :start-date="education.startDate"
+                          :end-date="education.endDate"
+                          :school-location="education.schoolLocation"
+                          :job-description="education.edDescription"
+                          :job-des-content="education.edDesContent"
+                          @on-remove="removeEducation"
+                          @on-update="updateEducation"
+                          v-bind="education"
+                        />
+                      </v-expansion-panels>
+                    </v-col>
+                    <v-btn
+                      prepend-icon="mdi:mdi-plus-thick"
+                      size="small"
+                      variant="text"
+                      rounded="0"
+                      width="100%"
+                      class="justify-center"
+                      @click="addEducation"
+                    >
+                      Add More
+                    </v-btn>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-arrow-up-bold-box" /><span
+                      class="ml-2"
+                      >SKILLS</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <div v-for="skill in resume.skills">
+                        <SingleInput
+                          :id="skill.id"
+                          :value="skill.name"
+                          label="Skill"
+                          @on-remove="removeSkills"
+                          @on-update="updateSkills"
+                        />
+                      </div>
+                    </v-col>
+                    <v-btn
+                      prepend-icon="mdi:mdi-plus-thick"
+                      size="small"
+                      variant="text"
+                      rounded="0"
+                      width="100%"
+                      class="justify-center"
+                      @click="addSkills"
+                    >
+                      Add More
+                    </v-btn>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-certificate" /><span class="ml-2"
+                      >CERTIFICATIONS</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <v-expansion-panels variant="popout" v-model="certPanels">
+                        <CertificateCard
+                          v-for="certificate in resume.certificates"
+                          :key="certificate.id"
+                          :id="certificate.id"
+                          :cert-name="certificate.certName"
+                          :link="certificate.link"
+                          :start-date="certificate.startDate"
+                          :end-date="certificate.endDate"
+                          :cert-description="certificate.edDescription"
+                          :cert-des-content="certificate.edDesContent"
+                          @on-remove="removeCertificates"
+                          @on-update="updateCertificates"
+                          v-bind="certificate"
+                        />
+                      </v-expansion-panels>
+                    </v-col>
+                    <v-btn
+                      prepend-icon="mdi:mdi-plus-thick"
+                      size="small"
+                      variant="text"
+                      rounded="0"
+                      width="100%"
+                      class="justify-center"
+                      @click="addCertificates"
+                    >
+                      Add More
+                    </v-btn>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-google-translate" /><span class="ml-2"
+                      >LANGUAGES</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <div v-for="language in resume.languages">
+                        <SingleInput
+                          :id="language.id"
+                          :value="language.name"
+                          label="Language"
+                          @on-remove="removeLanguages"
+                          @on-update="updateLanguages"
+                        />
+                      </div>
+                    </v-col>
+                    <v-btn
+                      prepend-icon="mdi:mdi-plus-thick"
+                      size="small"
+                      variant="text"
+                      rounded="0"
+                      width="100%"
+                      class="justify-center"
+                      @click="addLanguages"
+                    >
+                      Add More
+                    </v-btn>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-account-multiple-check" /><span
+                      class="ml-2"
+                      >REFERENCES</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <!-- Company -->
+                      <v-expansion-panels variant="popout" v-model="refPanels">
+                        <References
+                          v-for="reference in resume.references"
+                          :key="reference.id"
+                          :id="reference.id"
+                          :name="reference.name"
+                          :email="reference.email"
+                          :phone="reference.phone"
+                          @on-remove="removeReferences"
+                          @on-update="updateReferences"
+                          v-bind="reference"
+                        />
+                      </v-expansion-panels>
+                    </v-col>
+                    <v-btn
+                      prepend-icon="mdi:mdi-plus-thick"
+                      size="small"
+                      variant="text"
+                      rounded="0"
+                      width="100%"
+                      class="justify-center"
+                      @click="addReferences"
+                    >
+                      Add More
+                    </v-btn>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-link-variant-plus" /><span
+                      class="ml-2"
+                      >SOCIAL LINKS</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <div v-for="sl in resume.socialLinks">
+                        <DoubleInput
+                          :id="sl.id"
+                          @on-remove="removeSoicalLinks"
+                          @on-update="updateSoicalLinks"
+                          label1="Title"
+                          label2="Link"
+                          :value1="sl.value1"
+                          :value2="sl.value2"
+                        />
+                      </div>
+                    </v-col>
+                    <v-btn
+                      prepend-icon="mdi:mdi-plus-thick"
+                      size="small"
+                      variant="text"
+                      rounded="0"
+                      width="100%"
+                      class="justify-center"
+                      @click="addSoicalLinks"
+                    >
+                      Add More
+                    </v-btn>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+
+              <v-expansion-panel>
+                <v-expansion-panel-title>
+                  <v-row align="center">
+                    <v-icon icon="mdi:mdi-box-shadow" /><span class="ml-2"
+                      >PORTFOLIOS</span
+                    >
+                  </v-row>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <v-row>
+                    <v-col cols="12">
+                      <div v-for="p in resume.portfolios">
+                        <DoubleInput
+                          :id="p.id"
+                          @on-remove="removePortfolios"
+                          @on-update="updatePortfolios"
+                          label1="Title"
+                          label2="Link"
+                          :value1="p.value1"
+                          :value2="p.value2"
+                        />
+                      </div>
+                    </v-col>
+                    <v-btn
+                      prepend-icon="mdi:mdi-plus-thick"
+                      size="small"
+                      variant="text"
+                      rounded="0"
+                      width="100%"
+                      class="justify-center"
+                      @click="addPortfolios"
+                    >
+                      Add More
+                    </v-btn>
+                  </v-row>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+
+              <!-- <CustomSection v-for="section in resume.customSections" :section="section" />
                 <v-row class="mt-2 pa-4">
                   <v-btn class="w-100" variant="text" @click="addCustomSection"> Add Custom Section </v-btn>
                 </v-row> -->
-              </v-expansion-panels>
-            </form>
+            </v-expansion-panels>
           </v-card>
         </v-col>
         <!-- Preview -->
@@ -544,18 +533,17 @@
           lg="6"
           style="
             position: absolute;
-           
+
             right: 0;
-            overflow-y:auto;
-            
+            overflow-y: auto;
+            height: 100vh;
           "
           class="d-none d-lg-block"
         >
           <v-row
-            class="bg-grey-darken-2 pa-4 position-relative "
+            class="bg-grey-darken-2 pa-4 position-relative"
             align="center"
             justify="center"
-            style="height: 100vh;"
           >
             <div class="pa-10 bg-white">
               <div class="page-document" id="document_page">
@@ -938,7 +926,7 @@ export default {
       edPanels: 0,
       refPanels: 0,
       certPanels: 0,
-
+      defaultPanel: 0,
       resume: {
         summary: '',
         personalInfo: {
@@ -949,9 +937,9 @@ export default {
           phone: '+66123456789',
           jobTitle: 'Manager',
           nationality: '',
-          address: '1A,20-Home',
-          country: 'Thailand',
-          city: 'Bangkok',
+          address: '123,Home',
+          country: 'Country',
+          city: 'City',
           postalCode: '10110',
           dateOfBirth: '20-22-100',
           linkedin: 'https://linkedin.com/in/name',
@@ -982,6 +970,7 @@ export default {
       this.resume.skills.push({
         id: id,
         name: 'Skill',
+        value:'Pariatur'
       })
     },
     removeSkills(id) {
@@ -999,6 +988,7 @@ export default {
       this.resume.languages.push({
         id: id,
         name: 'Language',
+        value:'Non pariatur nostrud in ea elit sint.'
       })
     },
     removeLanguages(id) {
@@ -1015,12 +1005,12 @@ export default {
       const id = generateHashUniqueID()
       this.resume.certificates.push({
         id: id,
-        certName: 'Title',
-        link: 'url',
+        certName: 'Sit mollit fugiat ad incididunt.',
+        link: 'Consectetur exercitation dolor minim officia consectetur laborum irure et sit culpa.',
         startDate: moment().format('DD-MM-YYYY'),
         endDate: moment().format('DD-MM-YYYY'),
-        certDescription: [],
-        certDesContent: '',
+        certDescription: ["Nisi laboris deserunt ipsum enim ullamco excepteur voluptate Lorem et Lorem in magna."],
+        certDesContent: '\u2022 Magna culpa est irure laboris.',
       })
       this.certPanels = this.resume.certificates.findIndex((e) => e.id === id)
     },
@@ -1099,10 +1089,12 @@ export default {
       const id = generateHashUniqueID()
       this.resume.educations.push({
         id: id,
-        schoolName: 'School Name',
+        schoolName: 'Non proident reprehenderit elit dolore excepteur ipsum anim cupidatat.',
         degree: 'Degree or Subject',
-        edDescription: [],
-        edDesContent: '',
+        edDescription: [
+          "Velit ex ex aliquip eiusmod labore et est occaecat laboris cillum non laborum ullamco Lorem. Duis mollit et ea do elit et deserunt laborum fugiat occaecat consequat minim. In elit ullamco magna officia fugiat sunt cillum amet excepteur esse qui incididunt irure irure. Sunt non irure nulla anim ex minim dolore deserunt."
+        ],
+        edDesContent: '\u2022 Velit ex ex aliquip eiusmod labore et est occaecat laboris cillum non laborum ullamco Lorem. Duis mollit et ea do elit et deserunt laborum fugiat occaecat consequat minim. In elit ullamco magna officia fugiat sunt cillum amet excepteur esse qui incididunt irure irure. Sunt non irure nulla anim ex minim dolore deserunt.',
         startDate: moment().format('DD-MM-YYYY'),
         endDate: moment().format('DD-MM-YYYY'),
         schoolLocation: 'Location',
@@ -1123,10 +1115,10 @@ export default {
       const id = generateHashUniqueID()
       this.resume.experiences.push({
         id: id,
-        companyName: 'Employer',
-        jobTitle: 'Job Title',
-        jobDescription: [],
-        jobDesContent: '',
+        companyName: 'Eiusmod ipsum esse ullamco et.',
+        jobTitle: 'Culpa dolore anim Lorem non magna.',
+        jobDescription: ["Velit ex ex aliquip eiusmod labore et est occaecat laboris cillum non laborum ullamco Lorem. Duis mollit et ea do elit et deserunt laborum fugiat occaecat consequat minim. In elit ullamco magna officia fugiat sunt cillum amet excepteur esse qui incididunt irure irure. Sunt non irure nulla anim ex minim dolore deserunt."],
+        jobDesContent: '\u2022 Velit ex ex aliquip eiusmod labore et est occaecat laboris cillum non laborum ullamco Lorem. Duis mollit et ea do elit et deserunt laborum fugiat occaecat consequat minim. In elit ullamco magna officia fugiat sunt cillum amet excepteur esse qui incididunt irure irure. Sunt non irure nulla anim ex minim dolore deserunt.',
         startDate: moment().format('DD-MM-YYYY'),
         endDate: moment().format('DD-MM-YYYY'),
         companyLocation: 'Location',
@@ -1156,10 +1148,23 @@ export default {
   },
 
   created() {
-    // this.addExperience()
-    // this.addEducation()
-    // this.addCertificates()
-    // this.addCertificates()
+    this.defaultPanel = 0
+    this.resume.summary="Excepteur mollit dolor tempor pariatur sunt pariatur. Lorem aute adipisicing aute veniam. Tempor cupidatat culpa excepteur ea dolor sunt exercitation anim incididunt laboris ea labore. Non proident in eiusmod aliqua cupidatat reprehenderit. Magna dolore sit occaecat ullamco eu aliqua ex deserunt veniam."
+    this.addExperience()
+    this.addExperience()
+    this.addEducation()
+    this.addCertificates()
+    this.addSkills()
+    this.addSkills()
+    this.addSkills()
+    this.addSkills()
+    this.addSkills()
+    this.addLanguages()
+    this.addLanguages()
+    this.addLanguages()
+    this.addLanguages()
+    this.addReferences()
+    this.addReferences()
   },
 }
 </script>
@@ -1169,8 +1174,9 @@ export default {
   font-family: Arial, sans-serif !important;
   color: black;
   background-color: white;
-  width: 21cm;
-  min-height: 27.9cm;
+  
+  padding:0;
+  box-sizing: border-box
 }
 
 .page-title {
