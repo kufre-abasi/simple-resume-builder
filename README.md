@@ -5,6 +5,8 @@ https://simpleresume.vercel.app
 
 ![](public/screenshot.png)
 
+CREATE: https://simpleresume.vercel.app/#/edit/resume
+TIPS : https://hwpi.harvard.edu/files/ocs/files/hes-resume-cover-letter-guide.pdf
 ___
 
 ## **About Project**
