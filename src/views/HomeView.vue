@@ -21,9 +21,9 @@
                     }">
                         Resume
                     </v-btn>
-                    <v-btn class="bg-black pa-4" size="x-large"  variant="flat" >
+                    <!-- <v-btn class="bg-black pa-4" size="x-large"  variant="flat" >
                         Cover Letter
-                    </v-btn>
+                    </v-btn> -->
                 </v-row>
                
               </v-card-actions>

@@ -1,15 +1,37 @@
 <template>
   <v-main>
-    <v-container>
+    <v-container fluid>
       <v-row>
-        <v-col cols="12" lg="6">
+        <!-- Input Panel -->
+        <v-col
+          style="
+            position: fixed;
+            top: calc(64px);
+            padding-bottom: 100px;
+            height: 100vh;
+            overflow-y: auto;
+     
+            left: 0;
+            background-color: white;
+          "
+          cols="12"
+          lg="6"
+        >
           <v-card flat>
             <!-- <v-text-field label="Position"> -->
 
             <!-- </v-text-field> -->
             <form>
               <v-expansion-panels variant="accordion">
-                <v-expansion-panel title="PERSONAL INFORMATION">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-card-account-details" /><span
+                        class="ml-2"
+                        >PERSONAL INFORMATION</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -124,18 +146,38 @@
                       </v-col>
                       <v-col cols="12" sm="6" md="6">
                         <v-text-field
+                          type="date"
                           rounded="0"
                           name="date_of_birth"
                           label="Date of Birth (Optional)"
                           id="date_of_birth"
                           variant="underlined"
+                          v-model="resume.personalInfo.dateOfBirth"
+                        ></v-text-field>
+                      </v-col>
+                      <v-col cols="12">
+                        <v-text-field
+                          rounded="0"
+                          prepend-icon="mdi:mdi-linkedin"
+                          name="linkedIn"
+                          label="LinkedIn Profile"
+                          id="linkedIn"
+                          variant="underlined"
+                          v-model="resume.personalInfo.linkedin"
                         ></v-text-field>
                       </v-col>
                     </v-row>
                   </v-expansion-panel-text>
                 </v-expansion-panel>
 
-                <v-expansion-panel title="SUMMARY">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-text-box" /><span class="ml-2"
+                        >SUMMARY</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -155,7 +197,14 @@
                   </v-expansion-panel-text>
                 </v-expansion-panel>
 
-                <v-expansion-panel title="EXPERIENCES">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-toolbox" /><span class="ml-2"
+                        >EXPERIENCES</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -195,7 +244,14 @@
                   </v-expansion-panel-text>
                 </v-expansion-panel>
 
-                <v-expansion-panel title="EDUCATION">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-school" /><span class="ml-2"
+                        >EDUCATION</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -232,7 +288,15 @@
                   </v-expansion-panel-text>
                 </v-expansion-panel>
 
-                <v-expansion-panel title="SKILLS">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-arrow-up-bold-box" /><span
+                        class="ml-2"
+                        >SKILLS</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -261,7 +325,14 @@
                   </v-expansion-panel-text>
                 </v-expansion-panel>
 
-                <v-expansion-panel title="CERTIFICATIONS">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-certificate" /><span class="ml-2"
+                        >CERTIFICATIONS</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -299,7 +370,15 @@
                     </v-row>
                   </v-expansion-panel-text>
                 </v-expansion-panel>
-                <v-expansion-panel title="LANGUAGES">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-google-translate" /><span
+                        class="ml-2"
+                        >LANGUAGES</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -328,7 +407,15 @@
                   </v-expansion-panel-text>
                 </v-expansion-panel>
 
-                <v-expansion-panel title="REFERENCES">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-account-multiple-check" /><span
+                        class="ml-2"
+                        >REFERENCES</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -365,7 +452,15 @@
                   </v-expansion-panel-text>
                 </v-expansion-panel>
 
-                <v-expansion-panel title="SOCIAL LINKS">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-link-variant-plus" /><span
+                        class="ml-2"
+                        >SOCIAL LINKS</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -396,7 +491,14 @@
                   </v-expansion-panel-text>
                 </v-expansion-panel>
 
-                <v-expansion-panel title="PORTFOLIOS">
+                <v-expansion-panel>
+                  <v-expansion-panel-title>
+                    <v-row align="center">
+                      <v-icon icon="mdi:mdi-box-shadow" /><span class="ml-2"
+                        >PORTFOLIOS</span
+                      >
+                    </v-row>
+                  </v-expansion-panel-title>
                   <v-expansion-panel-text>
                     <v-row>
                       <v-col cols="12">
@@ -427,157 +529,373 @@
                   </v-expansion-panel-text>
                 </v-expansion-panel>
 
+                <!-- <CustomSection v-for="section in resume.customSections" :section="section" />
                 <v-row class="mt-2 pa-4">
-                  <v-btn class="w-100" variant="text"> Add More Section </v-btn>
-                </v-row>
+                  <v-btn class="w-100" variant="text" @click="addCustomSection"> Add Custom Section </v-btn>
+                </v-row> -->
               </v-expansion-panels>
             </form>
           </v-card>
         </v-col>
-        <v-col cols="12" lg="6" class="d-none d-lg-block">
-          <v-row class="bg-grey-darken-2 pa-4" align="center" justify="center">
-            <div class="page-document">
-              <div class="page-title">
-                {{
-                  resume.personalInfo.firstname +
-                  ' ' +
-                  resume.personalInfo.middlename +
-                  ' ' +
-                  resume.personalInfo.lastname
-                }}
-              </div>
-              <div class="page-role-title">
-                {{ resume.personalInfo.jobTitle }}
-              </div>
-              <div class="page-subtitle-1">
-                <a
-                  style="text-decoration: none; color: black"
-                  :href="'mailto:' + resume.personalInfo.email"
-                  >{{ resume.personalInfo.email }}</a
-                >
-                |
-                <a
-                  style="text-decoration: none; color: black"
-                  :href="'tel:' + resume.personalInfo.phone"
-                  >{{ resume.personalInfo.phone }}</a
-                >
-              </div>
-              <div
-                class="page-subtitle-1"
-                v-if="resume.personalInfo.nationality"
-              >
-                {{ resume.personalInfo.nationality }}
-              </div>
-              <div class="page-subtitle-1">Social</div>
-              <div class="page-subtitle-1">
-                {{
-                  resume.personalInfo.address
-                    ? resume.personalInfo.address + ','
-                    : ''
-                }}{{
-                  resume.personalInfo.city
-                    ? resume.personalInfo.city + ','
-                    : ''
-                }}{{
-                  resume.personalInfo.postalCode
-                    ? resume.personalInfo.postalCode + ','
-                    : ''
-                }}{{
-                  resume.personalInfo.country ? resume.personalInfo.country : ''
-                }}
-              </div>
-              <!-- Summary -->
-              <div class="page-section" v-if="resume.summary">
-                <div class="page-section-title">
-                  Summary
-                  <div class="page-divider"></div>
-                </div>
+        <!-- Preview -->
 
-                <div class="page-section-child">
-                  <div class="page-summary-text">
-                    {{ resume.summary }}
-                  </div>
+        <v-col
+          cols="12"
+          lg="6"
+          style="
+            position: absolute;
+           
+            right: 0;
+            overflow-y:auto;
+            
+          "
+          class="d-none d-lg-block"
+        >
+          <v-row
+            class="bg-grey-darken-2 pa-4 position-relative "
+            align="center"
+            justify="center"
+            style="height: 100vh;"
+          >
+            <div class="pa-10 bg-white">
+              <div class="page-document" id="document_page">
+                <div class="page-title">
+                  {{
+                    resume.personalInfo.firstname +
+                    ' ' +
+                    resume.personalInfo.middlename +
+                    ' ' +
+                    resume.personalInfo.lastname
+                  }}
                 </div>
-              </div>
-              <!-- Experiences -->
-              <div class="page-section">
-                <div class="page-section-title">
-                  EXPERIENCES
-                  <div class="page-divider"></div>
-                  <div
-                    class="page-sub-section"
-                    v-for="experience in resume.experiences"
-                    :key="experience.id"
+                <div class="page-role-title">
+                  {{ resume.personalInfo.jobTitle }}
+                </div>
+                <div class="page-subtitle-1">
+                  <a
+                    style="text-decoration: none; color: black"
+                    :href="'mailto:' + resume.personalInfo.email"
+                    >{{ resume.personalInfo.email }}</a
                   >
-                    <div class="page-section-content">
-                      <div class="page-section-content-title-1">
-                        {{ experience.companyName }}
-                      </div>
-                      <div class="page-section-content-title-1">
-                        {{ experience.companyLocation }}
-                      </div>
-                    </div>
-                    <div class="page-section-content">
-                      <div class="page-section-content-title-2">
-                        {{ experience.jobTitle }}
-                      </div>
-                      <div class="page-section-content-title-3">
-                        {{ formatDate(experience.startDate) }} -
-                        {{ formatDate(experience.endDate) }}
-                      </div>
-                    </div>
+                  |
+                  <a
+                    style="text-decoration: none; color: black"
+                    :href="'tel:' + resume.personalInfo.phone"
+                    >{{ resume.personalInfo.phone }}</a
+                  >
+                </div>
+                <div
+                  class="page-subtitle-1"
+                  v-if="resume.personalInfo.nationality"
+                >
+                  {{ resume.personalInfo.nationality }}
+                </div>
+                <div class="page-subtitle-1">
+                  <a
+                    style="text-decoration: none; color: black"
+                    :href="resume.personalInfo.linkedin"
+                    target="_blank"
+                    >{{ resume.personalInfo.linkedin }}</a
+                  >
+                </div>
+                <div class="page-subtitle-1">
+                  {{
+                    resume.personalInfo.address
+                      ? resume.personalInfo.address + ','
+                      : ''
+                  }}{{
+                    resume.personalInfo.city
+                      ? resume.personalInfo.city + ','
+                      : ''
+                  }}{{
+                    resume.personalInfo.postalCode
+                      ? resume.personalInfo.postalCode + ','
+                      : ''
+                  }}{{
+                    resume.personalInfo.country
+                      ? resume.personalInfo.country
+                      : ''
+                  }}
+                </div>
+                <!-- Summary -->
+                <div class="page-section" v-if="resume.summary">
+                  <div class="page-section-title">
+                    Summary
+                    <div class="page-divider"></div>
+                  </div>
 
-                    <div class="page-section-list-group">
-                      <ul>
-                        <li v-for="e in experience.jobDescription">
-                          {{ e }}
-                        </li>
-                        <!-- <li>Dolore cupidatat aliquip consequat sit.</li>
-                        <li>Dolore cupidatat aliquip consequat sit.</li>
-                        <li>Dolore cupidatat aliquip consequat sit.</li> -->
-                      </ul>
+                  <div class="page-section-child">
+                    <div class="page-summary-text">
+                      {{ resume.summary }}
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- Education -->
-              <div class="page-section">
-                <div class="page-section-title">
-                  EDUCATION
-                  <div class="page-divider"></div>
-                  <div
-                    class="page-sub-section"
-                    v-for="education in resume.educations"
-                    :key="education.id"
-                  >
-                    <div class="page-section-content">
-                      <div class="page-section-content-title-1">
-                        {{ education.schoolName }}
+                <!-- Experiences -->
+                <div class="page-section" v-if="resume.experiences.length">
+                  <div class="page-section-title">
+                    EXPERIENCES
+                    <div class="page-divider"></div>
+                    <div
+                      class="page-sub-section"
+                      v-for="experience in resume.experiences"
+                      :key="experience.id"
+                    >
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-1">
+                          {{ experience.companyName }}
+                        </div>
+                        <div class="page-section-content-title-1">
+                          {{ experience.companyLocation }}
+                        </div>
                       </div>
-                      <div class="page-section-content-title-1">
-                        {{ education.schoolLocation }}
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-2">
+                          {{ experience.jobTitle }}
+                        </div>
+                        <div class="page-section-content-title-3">
+                          {{ formatDate(experience.startDate) }} -
+                          {{ formatDate(experience.endDate) }}
+                        </div>
                       </div>
-                    </div>
-                    <div class="page-section-content">
-                      <div class="page-section-content-title-2">
-                        {{ education.degree }}
-                      </div>
-                      <div class="page-section-content-title-3">
-                        {{ formatDate(education.startDate) }} -
-                        {{ formatDate(education.endDate) }}
-                      </div>
-                    </div>
 
-                    <div class="page-section-list-group">
-                      <!-- {{ education.jobDescription }} -->
-                      <ul>
-                        <li v-for="e in education.edDescription">
-                          {{ e }}
-                        </li>
-                        <!-- <li>Dolore cupidatat aliquip consequat sit.</li>
+                      <div class="page-section-list-group">
+                        <ul>
+                          <li v-for="e in experience.jobDescription">
+                            {{ e }}
+                          </li>
+                          <!-- <li>Dolore cupidatat aliquip consequat sit.</li>
                         <li>Dolore cupidatat aliquip consequat sit.</li>
                         <li>Dolore cupidatat aliquip consequat sit.</li> -->
-                      </ul>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Education -->
+                <div class="page-section" v-if="resume.educations.length">
+                  <div class="page-section-title">
+                    EDUCATION
+                    <div class="page-divider"></div>
+                    <div
+                      class="page-sub-section"
+                      v-for="education in resume.educations"
+                      :key="education.id"
+                    >
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-1">
+                          {{ education.schoolName }}
+                        </div>
+                        <div class="page-section-content-title-1">
+                          {{ education.schoolLocation }}
+                        </div>
+                      </div>
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-2">
+                          {{ education.degree }}
+                        </div>
+                        <div class="page-section-content-title-3">
+                          {{ formatDate(education.startDate) }} -
+                          {{ formatDate(education.endDate) }}
+                        </div>
+                      </div>
+
+                      <div class="page-section-list-group">
+                        <!-- {{ education.jobDescription }} -->
+                        <ul>
+                          <li v-for="e in education.edDescription">
+                            {{ e }}
+                          </li>
+                          <!-- <li>Dolore cupidatat aliquip consequat sit.</li>
+                        <li>Dolore cupidatat aliquip consequat sit.</li>
+                        <li>Dolore cupidatat aliquip consequat sit.</li> -->
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Skills -->
+                <div class="page-section" v-if="resume.skills.length">
+                  <div class="page-section-title">
+                    SKILLS
+                    <div class="page-divider"></div>
+                    <div class="page-sub-section">
+                      <div class="page-section-list-group">
+                        <!-- {{ education.jobDescription }} -->
+                        <ul>
+                          <li v-for="skill in resume.skills" :key="skill.id">
+                            {{ skill.value }}
+                          </li>
+                          <!-- <li>Dolore cupidatat aliquip consequat sit.</li>
+                        <li>Dolore cupidatat aliquip consequat sit.</li>
+                        <li>Dolore cupidatat aliquip consequat sit.</li> -->
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Certification -->
+                <div class="page-section" v-if="resume.certificates.length">
+                  <div class="page-section-title">
+                    CERTIFICATIONS
+                    <div class="page-divider"></div>
+                    <div
+                      class="page-sub-section"
+                      v-for="cert in resume.certificates"
+                      :key="cert.id"
+                    >
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-1">
+                          {{ cert.certName }}
+                        </div>
+                        <div class="page-section-content-title-1">
+                          {{ formatDate(cert.startDate) }} -
+                          {{ formatDate(cert.endDate) }}
+                        </div>
+                      </div>
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-2">
+                          <a
+                            style="text-decoration: none; color: black"
+                            :href="cert.link"
+                            target="_blank"
+                          >
+                            {{ cert.link }}</a
+                          >
+                        </div>
+                      </div>
+
+                      <div
+                        class="page-section-list-group"
+                        v-if="cert.certDescription.length"
+                      >
+                        <!-- {{ education.jobDescription }} -->
+                        <ul>
+                          <li v-for="e in cert.certDescription">
+                            {{ e }}
+                          </li>
+                          <!-- <li>Dolore cupidatat aliquip consequat sit.</li>
+                        <li>Dolore cupidatat aliquip consequat sit.</li>
+                        <li>Dolore cupidatat aliquip consequat sit.</li> -->
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Languages -->
+                <div class="page-section" v-if="resume.languages.length">
+                  <div class="page-section-title">
+                    LANGUAGES
+                    <div class="page-divider"></div>
+                    <div class="page-sub-section">
+                      <div class="page-section-list-group">
+                        <!-- {{ education.jobDescription }} -->
+                        <ul>
+                          <li v-for="skill in resume.languages" :key="skill.id">
+                            {{ skill.value }}
+                          </li>
+                          <!-- <li>Dolore cupidatat aliquip consequat sit.</li>
+                        <li>Dolore cupidatat aliquip consequat sit.</li>
+                        <li>Dolore cupidatat aliquip consequat sit.</li> -->
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- References -->
+                <div class="page-section" v-if="resume.references.length">
+                  <div class="page-section-title">
+                    REFERENCES
+                    <div class="page-divider"></div>
+                    <div
+                      class="page-sub-section"
+                      v-for="ref in resume.references"
+                      :key="ref.id"
+                    >
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-1">
+                          {{ ref.name }}
+                          <span v-if="ref.employer">{{
+                            '(' + ref.employer + ')'
+                          }}</span>
+                        </div>
+                      </div>
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-2">
+                          <a
+                            style="text-decoration: none; color: black"
+                            v-if="ref.email"
+                            :href="'mailto:' + ref.email"
+                            target="_blank"
+                          >
+                            {{ ref.email }}</a
+                          >,
+                          <a
+                            style="text-decoration: none; color: black"
+                            v-if="ref.phone"
+                            :href="'tel:' + ref.phone"
+                            target="_blank"
+                          >
+                            {{ ref.phone }}</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- SocialLinks -->
+                <div class="page-section" v-if="resume.socialLinks.length">
+                  <div class="page-section-title">
+                    SOCIAL LINKS
+                    <div class="page-divider"></div>
+                    <div
+                      class="page-sub-section"
+                      v-for="ref in resume.socialLinks"
+                      :key="ref.id"
+                    >
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-1">
+                          {{ ref.value1 }}
+                        </div>
+                        <div class="page-section-content-title-2">
+                          <a
+                            style="text-decoration: none; color: black"
+                            v-if="ref.value2"
+                            :href="ref.value2"
+                            target="_blank"
+                          >
+                            {{ ref.value2 }}</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Portfolios -->
+                <div class="page-section" v-if="resume.portfolios.length">
+                  <div class="page-section-title">
+                    PORTFOLIOS
+                    <div class="page-divider"></div>
+                    <div
+                      class="page-sub-section"
+                      v-for="ref in resume.portfolios"
+                      :key="ref.id"
+                    >
+                      <div class="page-section-content">
+                        <div class="page-section-content-title-1">
+                          {{ ref.value1 }}
+                        </div>
+                        <div class="page-section-content-title-2">
+                          <a
+                            style="text-decoration: none; color: black"
+                            v-if="ref.value2"
+                            :href="ref.value2"
+                            target="_blank"
+                          >
+                            {{ ref.value2 }}</a
+                          >
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -600,6 +918,8 @@ import CertificateCard from '../components/CertificateCard.vue'
 import References from '../components/References.vue'
 import { generateHashUniqueID } from '../helpers'
 import moment from 'moment'
+import CustomSection from '../components/CustomSection.vue'
+import { Configuration, OpenAIApi } from 'openai'
 
 export default {
   components: {
@@ -610,16 +930,15 @@ export default {
     DoubleInput,
     CertificateCard,
     References,
+    CustomSection,
   },
   data() {
     return {
       expPanels: 0,
       edPanels: 0,
-      skPanels: 0,
-      langPanels: 0,
       refPanels: 0,
-      portPanels: 0,
       certPanels: 0,
+
       resume: {
         summary: '',
         personalInfo: {
@@ -635,6 +954,7 @@ export default {
           city: 'Bangkok',
           postalCode: '10110',
           dateOfBirth: '20-22-100',
+          linkedin: 'https://linkedin.com/in/name',
         },
         educations: [],
         experiences: [],
@@ -644,7 +964,7 @@ export default {
         socialLinks: [],
         references: [],
         portfolios: [],
-        sections: [],
+        customSections: [],
       },
     }
   },
@@ -826,13 +1146,20 @@ export default {
         this.resume.experiences[index] = newData
       }
     },
+    addCustomSection() {
+      const id = generateHashUniqueID()
+      this.resume.customSections.push({
+        id: id,
+        title: 'Custom Section',
+      })
+    },
   },
 
   created() {
-    this.addExperience()
-    this.addEducation()
-    this.addCertificates()
-    this.addCertificates()
+    // this.addExperience()
+    // this.addEducation()
+    // this.addCertificates()
+    // this.addCertificates()
   },
 }
 </script>
@@ -843,8 +1170,7 @@ export default {
   color: black;
   background-color: white;
   width: 21cm;
-  height: 27.9cm;
-  padding: 0.5in;
+  min-height: 27.9cm;
 }
 
 .page-title {
@@ -875,7 +1201,7 @@ export default {
 }
 
 .page-sub-section {
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
 }
 
 .page-section-content {

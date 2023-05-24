@@ -3,7 +3,7 @@
     <v-text-field
     rounded="0"
     :name="label + '[' + id + ']'"
-    :label="label"
+    :placeholder="label"
     :id="label + '[' + id + ']'"
     variant="underlined"
     v-model="currentData.value"
@@ -35,7 +35,6 @@ export default {
   data() {
     return {
       currentData:{
-       
         id: this.id,
         value: this.value,
       }

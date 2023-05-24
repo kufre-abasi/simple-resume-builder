@@ -4,7 +4,7 @@
       <v-text-field
         rounded="0"
         :name="label1 + '[' + id + ']'"
-        :label="label1"
+        :placeholder="label1"
         :id="label1 + '[' + id + ']'"
         variant="underlined"
         v-model="currentData.value1"
@@ -16,7 +16,7 @@
       <v-text-field
         rounded="0"
         :name="label2 + '[' + id + ']'"
-        :label="label2"
+        :placeholder="label2"
         :id="label2 + '[' + id + ']'"
         variant="underlined"
         v-model="currentData.value2"

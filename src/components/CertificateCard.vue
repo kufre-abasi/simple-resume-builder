@@ -144,8 +144,8 @@ export default {
       }
       this.currentData.certDescription = this.currentData.certDesContent
         .replace(/• /g, '')
-        .replace(/\n/g, '||')
-        .split('||')
+        .replace(/\n/g, '~~~')
+        .split('~~~')
 
       this.updateCertificate()
       this.PREV_LENGTH = newLength

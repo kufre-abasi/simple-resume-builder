@@ -7,7 +7,6 @@
         <v-img src="icon.png" class="pa-5 mr-2"/>
         <v-img src="logo_text.png" class="pa-10"/>
 
-    
     </template>
 <!-- 
     <v-app-bar-title>
@@ -15,7 +14,7 @@
     </v-app-bar-title> -->
 
     <template v-slot:append>
-      <v-btn icon="mdi:mdi-dots-vertical"></v-btn>
+      <v-btn icon="mdi:mdi-printer-eye" @click="$emit('onExport')"></v-btn>
     </template>
   </v-app-bar>
 
@@ -24,7 +23,7 @@
 <script>
 
     export default {
-        
+        emits:['onExport']
     }
 </script>
 

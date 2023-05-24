@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
-
+import openai from './modules/openai'
 export default createStore({
   plugins: [createPersistedState()], // This Vuex store uses the vuex-persistedstate plugin to persist the state in the browser's local storage.
 
@@ -45,6 +45,6 @@ export default createStore({
 
   // Modules for organizing related state, mutations, actions, and getters
   modules: {
-
+    
   },
 })
