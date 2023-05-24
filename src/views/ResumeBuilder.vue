@@ -908,7 +908,7 @@ import { generateHashUniqueID } from '../helpers'
 import moment from 'moment'
 import CustomSection from '../components/CustomSection.vue'
 import { Configuration, OpenAIApi } from 'openai'
-
+import { event } from 'vue-gtag'
 export default {
   components: {
     ExperienceCard,
@@ -1165,6 +1165,7 @@ export default {
     this.addLanguages()
     this.addReferences()
     this.addReferences()
+    event('resume_builder', { method: 'Google' })
   },
 }
 </script>

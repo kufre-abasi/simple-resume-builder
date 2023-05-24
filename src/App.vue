@@ -12,6 +12,7 @@ import Error from './components/Error.vue'
 import Navbar from './components/Navbar.vue'
 import html2pdf from 'html2pdf.js'
 import { generateHashUniqueID } from './helpers'
+
 export default {
   name: 'App',
 
@@ -23,7 +24,7 @@ export default {
     return {}
   },
   computed: {
-    ...mapGetters(['allHeadlines', 'isLoading', 'error']),
+    ...mapGetters(['isLoading', 'error']),
     hasError() {
       return this.error != ''
     },
@@ -64,10 +65,15 @@ export default {
       }
 
       html2pdf().from(container).set(opt).save()
+      event('exportPDF', { method: 'Google' })
     },
   },
 
-  created() {},
+  created() {
+    event('index', { method: 'Google' })
+
+
+  },
   watch: {
     searchQuery(val) {
       this.highLightText = val.q != ' ' ? val.q : ''
