@@ -3,7 +3,7 @@
 
 https://simpleresume.vercel.app
 
-
+![](public/screenshot.png)
 
 ___
 
