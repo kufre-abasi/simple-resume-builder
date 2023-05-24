@@ -15,15 +15,31 @@
     </v-app-bar-title> -->
 
     <template v-if="$route.name==='edit.resume'" v-slot:append>
-      <v-btn icon="mdi:mdi-printer-eye" @click="$emit('onExport')"></v-btn>
+      <v-btn @click="$emit('onExport')" v-if="!isMobile()"  prepend-icon="mdi:mdi-file-download" size="large" variant="text">
+        <span>Download PDF</span>
+      </v-btn>
+
+      <v-btn @click="$emit('onExport')" v-else  icon="mdi:mdi-printer-eye"   variant="text">
+       
+      </v-btn>
     </template>
   </v-app-bar>
 </template>
 
 <script>
+ import { useDisplay } from 'vuetify'
 export default {
   emits: ['onExport'],
+  methods:{
+    isMobile(){
+     
+      return this.$vuetify.display.mobile;
+
+    }
+  },
   
+ 
+
 }
 </script>
 
