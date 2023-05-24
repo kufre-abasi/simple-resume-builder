@@ -608,7 +608,7 @@
                 <!-- Summary -->
                 <div class="page-section" v-if="resume.summary">
                   <div class="page-section-title">
-                    Summary
+                    SUMMARY
                     <div class="page-divider"></div>
                   </div>
 
