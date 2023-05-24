@@ -26,6 +26,12 @@
                     </v-btn>
                
               </v-card-actions>
+              <v-card-subtitle  class="text-pre-wrap">
+                Notes: This webstie doesn't collect about any personal information but analytics information will be collected for using this webstie.
+                You can use freely for your own purposes.
+                If you want to suggest anything for this website, click the link below.
+               <a href=" https://github.com/lolvOid/simple-resume-builder" target="_blank">Link</a>
+              </v-card-subtitle>
             </v-card>
           </v-col>
         </v-row>
